@@ -110,8 +110,8 @@ class NumberWrapper final
 
 using Uint8 = NumberWrapper<std::uint8_t>;
 using Uint16 = NumberWrapper<std::uint16_t>;
-using Uint32 = NumberWrapper<std::uint16_t>;
-using Uint64 = NumberWrapper<std::uint16_t>;
+using Uint32 = NumberWrapper<std::uint32_t>;
+using Uint64 = NumberWrapper<std::uint64_t>;
 
 using Int8 = NumberWrapper<std::int8_t>;
 using Int16 = NumberWrapper<std::int16_t>;
