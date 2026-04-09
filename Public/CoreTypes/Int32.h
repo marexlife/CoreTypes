@@ -1,18 +1,14 @@
-#ifndef CORETYPES_TYPES_INT32_H_
-#define CORETYPES_TYPES_INT32_H_
+#ifndef CORETYPES_INT32_H_
+#define CORETYPES_INT32_H_
 
-#include "ValueType.h"
-
-#include <concepts>
+#include <cmath>
 #include <cstdint>
 #include <type_traits>
 
 namespace CoreTypes
 {
-namespace Types
-{
 template <typename WrappedType>
-    requires std::integral<WrappedType>
+    requires std::is_arithmetic_v<WrappedType>
 class NumberWrapper final
 {
   public:
@@ -107,7 +103,17 @@ class NumberWrapper final
     WrappedType m_value;
 };
 
+using Uint8 = NumberWrapper<std::uint8_t>;
+using Uint16 = NumberWrapper<std::uint16_t>;
+using Uint32 = NumberWrapper<std::uint16_t>;
+using Uint64 = NumberWrapper<std::uint16_t>;
+
+using Int8 = NumberWrapper<std::int8_t>;
+using Int16 = NumberWrapper<std::int16_t>;
 using Int32 = NumberWrapper<std::int32_t>;
-} // namespace Types
+using Int64 = NumberWrapper<std::int64_t>;
+
+using Float = NumberWrapper<std::float_t>;
+using Double = NumberWrapper<std::double_t>;
 } // namespace CoreTypes
-#endif // CORETYPES_TYPES_INT32_H_
+#endif // CORETYPES_INT32_H_
