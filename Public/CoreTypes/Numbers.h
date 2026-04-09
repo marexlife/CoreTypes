@@ -94,7 +94,12 @@ class NumberWrapper final
         return *this;
     }
 
-    [[nodiscard]] constexpr std::int32_t GetRaw() const
+    [[nodiscard]] constexpr WrappedType operator*() const
+    {
+        return m_value;
+    }
+
+    [[nodiscard]] constexpr WrappedType GetRaw() const
     {
         return m_value;
     }
