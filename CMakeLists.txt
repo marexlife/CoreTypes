@@ -15,5 +15,5 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 
 target_precompile_headers(${PROJECT_NAME} PUBLIC
-    ${CUSTOM_HEADER_PATH}/Int32.h
+    ${CUSTOM_HEADER_PATH}/Numbers.h
 )
